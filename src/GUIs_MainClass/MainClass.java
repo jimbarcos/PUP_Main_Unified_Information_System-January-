@@ -5,6 +5,7 @@ public class MainClass {
         // TODO code application logic here
         LogIn logFrame = new LogIn();
         logFrame.pack();
+        
         logFrame.setVisible(true);
     }
 }
