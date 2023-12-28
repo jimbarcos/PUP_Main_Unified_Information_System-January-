@@ -139,7 +139,7 @@ public class SignUp extends javax.swing.JFrame {
 
         jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jCheckBox1.setForeground(new java.awt.Color(130, 0, 0));
-        jCheckBox1.setText("See Password");
+        jCheckBox1.setText("See password");
         jCheckBox1.setContentAreaFilled(false);
         jCheckBox1.setFocusPainted(false);
 
