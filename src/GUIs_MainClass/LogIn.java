@@ -225,10 +225,12 @@ public class LogIn extends javax.swing.JFrame {
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel8.setBackground(new java.awt.Color(255, 255, 255));
         jLabel8.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(136, 0, 0));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("X");
+        jLabel8.setOpaque(true);
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel8MouseClicked(evt);
@@ -297,11 +299,15 @@ public class LogIn extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel8MouseClicked
 
     private void jLabel8MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseEntered
+        jLabel8.setBackground(new Color(136, 0, 0));
         jLabel8.setFont(new Font("Segoe UI", Font.BOLD, 24));
+        jLabel8.setForeground(new Color(255, 255, 255));
     }//GEN-LAST:event_jLabel8MouseEntered
 
     private void jLabel8MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseExited
+        jLabel8.setBackground(new Color(255, 255, 255));
         jLabel8.setFont(new Font("Segoe UI", Font.PLAIN, 24));
+        jLabel8.setForeground(new Color(136,0,0));
     }//GEN-LAST:event_jLabel8MouseExited
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed

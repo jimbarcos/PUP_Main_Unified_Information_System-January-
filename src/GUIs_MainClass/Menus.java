@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package GUIs_MainClass;
-import java.awt.Font;
+import java.awt.*;
 
 /**
  *
@@ -49,6 +49,7 @@ public class Menus extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(136, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("X");
+        jLabel1.setOpaque(true);
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel1MouseClicked(evt);
@@ -168,11 +169,15 @@ public class Menus extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
+        jLabel1.setBackground(new Color(136, 0, 0));
         jLabel1.setFont(new Font("Segoe UI", Font.BOLD, 24));
+        jLabel1.setForeground(new Color(255, 255, 255));
     }//GEN-LAST:event_jLabel1MouseEntered
 
     private void jLabel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseExited
+        jLabel1.setBackground(new Color(255, 255, 255));
         jLabel1.setFont(new Font("Segoe UI", Font.PLAIN, 24));
+        jLabel1.setForeground(new Color(136,0,0));
     }//GEN-LAST:event_jLabel1MouseExited
 
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
