@@ -29,6 +29,7 @@ public class Menu extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
 
+        jLabel1.setBackground(new java.awt.Color(255, 255, 255));
         jLabel1.setFont(new java.awt.Font("Segoe UI Historic", 1, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(136, 0, 0));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -86,6 +87,7 @@ public class Menu extends javax.swing.JFrame {
         jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Home", "History", "Mission and Vision", "Achievements", "Facilities", "Adminission", "Scholarship", "Colleges", "Department Clubs", "Senior High", "Strand and Track Evaluation", "PUP Fun Facts" }));
+        jComboBox1.setBorder(null);
         jComboBox1.setFocusable(false);
         jComboBox1.setOpaque(false);
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
