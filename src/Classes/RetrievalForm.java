@@ -348,10 +348,11 @@ public class RetrievalForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1MouseExited
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Home options = new Home();
-        options.pack();
-        options.setVisible(true); // Display signUp frame
-        dispose(); // Close login frame
+        JOptionPane.showMessageDialog(this, "Account Successfully Created! Redirecting you to the Sign In Page", "Notice", JOptionPane.INFORMATION_MESSAGE);
+        LogIn logFrame = new LogIn();
+        logFrame.pack();
+        logFrame.setVisible(true); // Display LogIn frame
+        dispose(); // Close LogIn frame
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
