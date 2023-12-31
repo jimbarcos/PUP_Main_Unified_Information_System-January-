@@ -123,8 +123,6 @@ public class FileHandling {
         }
     }
     
-    
-    
     public boolean storeData(String fName, String fUsername, String fPassword,int fCode) {
         File accounts = new File("Account.txt");
         if (accounts.exists()) {

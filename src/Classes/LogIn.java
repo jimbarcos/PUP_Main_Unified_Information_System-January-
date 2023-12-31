@@ -1,8 +1,5 @@
 package Classes;
 import java.awt.*;
-import java.util.Scanner;
-import java.io.File;
-import java.io.FileNotFoundException;
 import javax.swing.JOptionPane;
 
 public class LogIn extends javax.swing.JFrame {
