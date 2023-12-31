@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package GUIs_MainClass;
+package Classes;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -29,7 +29,11 @@ public class Logs {
      * @param name the name to set
      */
     public void setName(String name) {
-        this.name = name;
+        if (!name.isEmpty() || !usernameExist(name)) {
+            this.name = name;
+        } else {
+            this.name = "";
+        }
     }
 
     /**
@@ -43,7 +47,11 @@ public class Logs {
      * @param username the username to set
      */
     public void setUsername(String username) {
-        this.username = username;
+        if (!username.isEmpty()) {
+            this.username = username;
+        } else {
+            this.username = "";
+        }
     }
 
     /**
@@ -75,14 +83,22 @@ public class Logs {
     }
     
     public boolean nameVerifier (String name) {
-        return name.matches(".*[0-9\\p{P}&&[^.]].*|^$");
+        return !name.matches(".*[0-9\\p{P}&&[^.]].*|^$");
     }
     
     public boolean usernameVerifier (String username) {
-        return username.equals("");
+        return !username.equals("");
     }
     
-    public boolean usernameDuplicate(String username) {
+    public boolean passVerifier(String password, String username) {
+       return !(username.equals(password) || username.equals("") || username.length() < 12);
+    }
+    
+    public boolean usernameExist(String username) {
+        if (username.isEmpty()) {
+        return false; 
+        }
+        
         try {
             File accounts = new File("Account.txt");
             try (Scanner myReader = new Scanner(accounts)) {
@@ -102,8 +118,5 @@ public class Logs {
         }
     }
     
-    public boolean passVerifier(String password, String username) {
-       return !(username.equals(password) || username.equals("") || username.length() < 12);
-    }
 }
 

@@ -1,4 +1,4 @@
-package GUIs_MainClass;
+package Classes;
 import java.awt.*;
 import java.util.Scanner;
 import java.io.File;
@@ -164,6 +164,10 @@ public class LogIn extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(130, 0, 0));
         jLabel7.setText("Don't have an account?");
+
+        jLabel10.setForeground(new java.awt.Color(136, 0, 0));
+
+        jLabel11.setForeground(new java.awt.Color(136, 0, 0));
 
         jCheckBox1.setBackground(new java.awt.Color(255, 255, 255));
         jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
@@ -334,28 +338,22 @@ public class LogIn extends javax.swing.JFrame {
         jLabel10.setText("*Please enter username");
         jLabel11.setText("");
     } else {
-        try {
-            File accounts = new File("Account.txt");
-            Scanner myReader = new Scanner(accounts);
-
-            while (myReader.hasNextLine()) {
-                String line = myReader.nextLine();
-                
-                if (line.startsWith("Username: ") && line.contains(login.getUsername())
-                && myReader.nextLine().split(": ")[1].equals(login.getPassword())) {
-                    Home options = new Home();
-                    options.pack();
-                    options.setVisible(true);
-                    dispose();
-                    myReader.close();
-                    return;
-                }
+        FileHandling data = new FileHandling();
+        
+        if (data.isUsernameExist(login.getUsername())) {
+            if(data.isUnamePassValid(login.getUsername(), login.getPassword())) {
+                Home options = new Home();
+                options.pack();
+                options.setVisible(true);
+                dispose();
+            } else {
+                jLabel10.setText("");
+                jLabel11.setText("Invalid password");
             }
-
+        } else {
             // If no matching username and password found
-            jLabel12.setText("Invalid credentials");
-        } catch(FileNotFoundException e){
-            System.out.println("An error occurred.");
+            jLabel10.setText("Invalid username");
+            jLabel11.setText("");
         }
     }
     }//GEN-LAST:event_jButton1ActionPerformed

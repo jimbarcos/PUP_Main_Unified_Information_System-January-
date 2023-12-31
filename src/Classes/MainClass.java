@@ -1,4 +1,4 @@
-package GUIs_MainClass;
+package Classes;
 
 public class MainClass {
     public static void main(String[] args) {

@@ -1,9 +1,10 @@
-package GUIs_MainClass;
+package Classes;
 import java.awt.*;
 import java.io.*;
 import java.security.SecureRandom;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 public class SignUp extends javax.swing.JFrame {
     // Constructor
@@ -176,6 +177,8 @@ public class SignUp extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setText("CREATE ACCOUNT");
+        jButton1.setBorder(null);
+        jButton1.setFocusPainted(false);
         jButton1.setFocusable(false);
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -349,7 +352,16 @@ public class SignUp extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
-        System.exit(0);
+        int result = JOptionPane.showConfirmDialog(
+        this,
+        "Are you sure you want to exit?",
+        "Exit Confirmation",
+        JOptionPane.YES_NO_OPTION
+        );
+
+        if (result == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
     }//GEN-LAST:event_jLabel14MouseClicked
 
     private void jLabel14MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseEntered
@@ -382,6 +394,7 @@ public class SignUp extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Logs logs = new Logs();
+        FileHandling data = new FileHandling();
         
         logs.setName(jTextField1.getText().trim());
         logs.setUsername(jTextField2.getText().trim());
@@ -391,48 +404,39 @@ public class SignUp extends javax.swing.JFrame {
         isUsernameValid = false;
         isPassValid = false;
       
-        if(logs.getName().isEmpty() && logs.getUsername().isEmpty() && logs.getPassword().isEmpty()) {
+        if(logs.getName().equals("") && logs.getUsername().equals("") && logs.getPassword().equals("")) {
             jLabel6.setText("*Invalid Format (only include letters)");
             jLabel8.setText("*Invalid username");
             jLabel10.setText("*Weak password");
-        } else if(logs.usernameDuplicate(logs.getUsername())) {
-            jLabel8.setText("*Username has already been taken");
-        }
-        else {
-            isNameValid = !logs.nameVerifier(logs.getName());
+        } else if(!(data.isUsernameExist(logs.getUsername()))) {
+            isNameValid = logs.nameVerifier(logs.getName());
             jLabel6.setText(isNameValid ? "":"*Invalid Format (only include letters)");
 
-            isUsernameValid=!logs.usernameVerifier(logs.getUsername());
+            isUsernameValid= logs.usernameVerifier(logs.getUsername());
             jLabel8.setText(isUsernameValid ? "":"*Invalid username");
 
-            isPassValid=logs.passVerifier(logs.getUsername(), logs.getPassword());
+            isPassValid= logs.passVerifier(logs.getUsername(), logs.getPassword());
             jLabel10.setText(isPassValid ? "":"*Weak password");
             
             System.out.print("isNameValid: " + isNameValid +"\n");
             System.out.print("isUsernameValid: " + isUsernameValid + "\n");
             System.out.print("isPassValid: " + isPassValid + "\n");
         }
+        else {
+            jLabel8.setText("*Username has already been taken");
+        }
         
         if (isNameValid && isUsernameValid && isPassValid) {
-            logs.setCode(generatedCode);
+            data.setfName(logs.getName());
+            data.setfUsername(logs.getUsername());
+            data.setfPassword(logs.getPassword());
+            data.setfCode(generatedCode);
             
-            File accounts = new File("Account.txt");
-            if (accounts.exists()) {
-                try (FileWriter fileWriter = new FileWriter(accounts, true)) {
-                    fileWriter.write("Name: " + logs.getName() + "\n");
-                    fileWriter.write("Username: " + logs.getUsername() + "\n");
-                    fileWriter.write("Password: " + logs.getPassword() + "\n");
-                    fileWriter.write("Back-up Code: " + logs.getCode() + "\n\n");
-
-                    fileWriter.close();
-
-                    Home options = new Home();
-                    options.pack();
-                    options.setVisible(true); // Display Menu frame
-                    dispose(); // Close menu frame
-                } catch (IOException e) {
-                    Logger.getLogger(SignUp.class.getName()).log(Level.SEVERE, null, e);
-                }
+            if (!data.storeData(data.getfName(), data.getfUsername(), data.getfPassword(), data.getfCode())) {
+                Home options = new Home();
+                options.pack();
+                options.setVisible(true); // Display Menu frame
+                dispose(); // Close menu frame
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
