@@ -4,9 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/user/Documents/Programming/GitHub/PUP_Main_Unified_Information_System/src/GUIs_MainClass/LogIn.java</file>
-            <file>file:/C:/Users/user/Documents/Programming/GitHub/PUP_Main_Unified_Information_System/src/GUIs_MainClass/Quiz.java</file>
             <file>file:/C:/Users/user/Documents/Programming/GitHub/PUP_Main_Unified_Information_System/src/GUIs_MainClass/SignUp.java</file>
-            <file>file:/C:/Users/user/Documents/Programming/GitHub/PUP_Main_Unified_Information_System/src/GUIs_MainClass/MainClass.java</file>
+            <file>file:/C:/Users/user/Documents/Programming/GitHub/PUP_Main_Unified_Information_System/src/GUIs_MainClass/Home.java</file>
+            <file>file:/C:/Users/user/Documents/Programming/GitHub/PUP_Main_Unified_Information_System/src/GUIs_MainClass/Logs.java</file>
+            <file>file:/C:/Users/user/Documents/Programming/GitHub/PUP_Main_Unified_Information_System/src/GUIs_MainClass/RetrievalForm.java</file>
         </group>
     </open-files>
 </project-private>

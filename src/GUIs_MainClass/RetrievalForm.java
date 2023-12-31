@@ -338,7 +338,7 @@ public class RetrievalForm extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1MouseExited
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Menu options = new Menu();
+        Home options = new Home();
         options.pack();
         options.setVisible(true); // Display signUp frame
         dispose(); // Close login frame
