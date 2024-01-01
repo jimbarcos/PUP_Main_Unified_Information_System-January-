@@ -400,11 +400,8 @@ public class SignUp extends javax.swing.JFrame {
         logs.setUsername(jTextField2.getText().trim());
         logs.setPassword(String.valueOf(jPasswordField1.getPassword()).trim());
         
-        isNameValid = false;
-        isUsernameValid = false;
-        isPassValid = false;
-      
-        if(logs.getName().equals("") && logs.getUsername().equals("") && logs.getPassword().equals("")) {
+        if(logs.credVerifier(logs.getName(), logs.getUsername(), logs.getPassword())) {
+            System.out.print("Valid: " + logs.credVerifier(logs.getName(), logs.getUsername(), logs.getPassword()));
             jLabel6.setText("*Invalid Format (only include letters)");
             jLabel8.setText("*Invalid username");
             jLabel10.setText("*Weak password");
@@ -412,7 +409,7 @@ public class SignUp extends javax.swing.JFrame {
             isNameValid = logs.nameVerifier(logs.getName());
             jLabel6.setText(isNameValid ? "":"*Invalid Format (only include letters)");
 
-            isUsernameValid= logs.usernameVerifier(logs.getUsername());
+            isUsernameValid = logs.usernameVerifier(logs.getUsername());
             jLabel8.setText(isUsernameValid ? "":"*Invalid username");
 
             isPassValid= logs.passVerifier(logs.getUsername(), logs.getPassword());
