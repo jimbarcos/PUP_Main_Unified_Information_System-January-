@@ -414,10 +414,6 @@ public class SignUp extends javax.swing.JFrame {
 
             isPassValid= logs.passVerifier(logs.getUsername(), logs.getPassword());
             jLabel10.setText(isPassValid ? "":"*Weak password");
-            
-            System.out.print("isNameValid: " + isNameValid +"\n");
-            System.out.print("isUsernameValid: " + isUsernameValid + "\n");
-            System.out.print("isPassValid: " + isPassValid + "\n");
         }
         else {
             jLabel8.setText("*Username has already been taken");
