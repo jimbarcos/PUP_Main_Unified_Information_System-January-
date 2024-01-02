@@ -5,6 +5,8 @@
  */
 package Classes;
 import java.awt.*;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,6 +19,9 @@ public class Quiz extends javax.swing.JFrame {
      */
     public Quiz() {
         initComponents();
+        
+        Image icon = new ImageIcon("C:/Users/user/Documents/Programming/GitHub/PUP_Main_Unified_Information_System/src/icons/image-300x300.jpg").getImage();
+        this.setIconImage(icon);
     }
 
     /**
@@ -166,7 +171,16 @@ public class Quiz extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        System.exit(0);
+        int result = JOptionPane.showConfirmDialog(
+        this,
+        "Are you sure you want to exit?",
+        "Exit Confirmation",
+        JOptionPane.YES_NO_OPTION
+        );
+
+        if (result == JOptionPane.YES_OPTION) {
+            System.exit(0);
+        }
     }//GEN-LAST:event_jLabel1MouseClicked
 
     private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered

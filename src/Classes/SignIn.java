@@ -1,12 +1,16 @@
 package Classes;
 import java.awt.*;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-public class LogIn extends javax.swing.JFrame {
+public class SignIn extends javax.swing.JFrame {
 
     // Constructor
-    public LogIn() {
+    public SignIn() {
         initComponents();
+        
+        Image icon = new ImageIcon("C:/Users/user/Documents/Programming/GitHub/PUP_Main_Unified_Information_System/src/icons/image-300x300.jpg").getImage();
+        this.setIconImage(icon);
     }
 
     // Initialize form

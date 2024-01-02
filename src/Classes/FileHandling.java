@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Classes;
 
 import java.io.File;
@@ -12,10 +8,6 @@ import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author cris
- */
 public class FileHandling {
     private String fName;
     private String fUsername;
@@ -78,11 +70,8 @@ public class FileHandling {
         this.fCode = fCode;
     }
     
+    // Method to check if username exist within a file
     public boolean isUsernameExist(String fUsername) {
-        if (fUsername.isEmpty()) {
-        return false; 
-        }
-        
         try {
             File accounts = new File("Account.txt");
             try (Scanner myReader = new Scanner(accounts)) {
@@ -102,6 +91,7 @@ public class FileHandling {
         }
     }
     
+    // Method to check if password and username exist within a file.
     public boolean isUnamePassValid(String fUsername, String fPassword) {
         try {
             File accounts = new File("Account.txt");
@@ -123,6 +113,7 @@ public class FileHandling {
         }
     }
     
+    // Method to add data in the file
     public boolean storeData(String fName, String fUsername, String fPassword,int fCode) {
         File accounts = new File("Account.txt");
         if (accounts.exists()) {

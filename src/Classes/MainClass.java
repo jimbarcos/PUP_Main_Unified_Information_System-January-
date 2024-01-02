@@ -2,7 +2,7 @@ package Classes;
 
 public class MainClass {
     public static void main(String[] args) {
-        LogIn logFrame = new LogIn();
+        SignIn logFrame = new SignIn();
         logFrame.pack();
         logFrame.setVisible(true); // Display LogIn frame
     }

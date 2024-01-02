@@ -1,5 +1,6 @@
 package Classes;
 import java.awt.*;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class Home extends javax.swing.JFrame {
@@ -7,6 +8,9 @@ public class Home extends javax.swing.JFrame {
     // Constructor
     public Home() {
         initComponents();
+        
+        Image icon = new ImageIcon("C:/Users/user/Documents/Programming/GitHub/PUP_Main_Unified_Information_System/src/icons/image-300x300.jpg").getImage();
+        this.setIconImage(icon);
     }
 
     // Initialize form
@@ -87,7 +91,7 @@ public class Home extends javax.swing.JFrame {
         jComboBox1.setBackground(new java.awt.Color(136, 0, 0));
         jComboBox1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Home", "History", "Mission and Vision", "Achievements", "Facilities", "Adminission", "Scholarship", "Colleges", "Department Clubs", "Senior High", "Strand and Track Evaluation", "PUP Fun Facts" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Home", "History", "Mission and Vision", "Achievements", "Facilities", "Adminission", "Scholarship", "Colleges", "Department Clubs", "Senior High", "Strand and Track Evaluation", "PUP Fun Facts", "Account Information", "Log out" }));
         jComboBox1.setBorder(null);
         jComboBox1.setFocusable(false);
         jComboBox1.setOpaque(false);

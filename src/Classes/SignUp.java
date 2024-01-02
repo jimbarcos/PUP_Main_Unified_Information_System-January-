@@ -1,19 +1,20 @@
 package Classes;
 import java.awt.*;
-import java.io.*;
 import java.security.SecureRandom;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class SignUp extends javax.swing.JFrame {
+    
     // Constructor
     public SignUp() {
         initComponents();
         
+        Image icon = new ImageIcon("C:/Users/user/Documents/Programming/GitHub/PUP_Main_Unified_Information_System/src/icons/image-300x300.jpg").getImage();
+        this.setIconImage(icon);
     }
 
-    // Iniatilize form
+    // Iniatilize components
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -429,21 +430,20 @@ public class SignUp extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(this, "Account Successfully Created! \n Your back-up code: " + data.getfCode() ,"Notice", JOptionPane.INFORMATION_MESSAGE);
                 Home options = new Home();
                 options.pack();
-                options.setVisible(true); // Display Menu frame
-                dispose(); // Close menu frame
+                options.setVisible(true);   // Display Menu frame
+                dispose();                  // Close menu frame
             }
         }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        LogIn logFrame = new LogIn();
+        SignIn logFrame = new SignIn();
         logFrame.pack();
-        logFrame.setVisible(true); // Display LogIn frame
-        dispose(); // Close LogIn frame
+        logFrame.setVisible(true);  // Display LogIn frame
+        dispose();                  // Close LogIn frame
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
-        // TODO add your handling code here:
         if (jCheckBox1.isSelected()){
             jPasswordField1.setEchoChar((char)0);
         } else{
@@ -452,7 +452,6 @@ public class SignUp extends javax.swing.JFrame {
     }//GEN-LAST:event_jCheckBox1ActionPerformed
 
     private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-        // TODO add your handling code here:
         if (jCheckBox2.isSelected()){
             if (!jTextField1.getText().trim().isEmpty() && !jTextField2.getText().trim().isEmpty() && !jTextField2.getText().trim().isEmpty()) {
                 SecureRandom secureRandomGenerator = new SecureRandom();
