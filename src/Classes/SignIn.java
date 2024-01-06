@@ -8,9 +8,10 @@ public class SignIn extends javax.swing.JFrame {
     // Constructor
     public SignIn() {
         initComponents();
-        
-        Image icon = new ImageIcon("C:/Users/user/Documents/Programming/GitHub/PUP_Main_Unified_Information_System/src/icons/image-300x300.jpg").getImage();
+        Image icon = new ImageIcon(this.getClass().getResource("/icon.png")).getImage();
         this.setIconImage(icon);
+      
+        
     }
 
     // Initialize form
@@ -150,7 +151,6 @@ public class SignIn extends javax.swing.JFrame {
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 255, 255));
         jButton3.setFont(new java.awt.Font("Segoe UI", 0, 16)); // NOI18N
         jButton3.setForeground(new java.awt.Color(130, 0, 0));
         jButton3.setText("Forgot Password?");
@@ -299,6 +299,7 @@ public class SignIn extends javax.swing.JFrame {
 
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 40));
 
+        jLabel9.setBackground(new Color(255, 255, 255, 100));
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/image-1080x900.jpg"))); // NOI18N
         getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 600));
 

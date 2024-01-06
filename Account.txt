@@ -1,6 +1,6 @@
 Name: Jhonder Sta.Ines
-Username: Jhonder Sta.Ines
-Password: Jhonder Sta.Ines12345678
+Username: 1
+Password: 1
 Back-up Code: 689392
 
 Name: Ceferino Arrey

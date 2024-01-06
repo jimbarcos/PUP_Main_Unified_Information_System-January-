@@ -9,7 +9,7 @@ public class RetrievalForm extends javax.swing.JFrame {
     public RetrievalForm() {
         initComponents();
         
-        Image icon = new ImageIcon("C:/Users/user/Documents/Programming/GitHub/PUP_Main_Unified_Information_System/src/icons/image-300x300.jpg").getImage();
+        Image icon = new ImageIcon(this.getClass().getResource("/icon.png")).getImage();
         this.setIconImage(icon);
     }
 
